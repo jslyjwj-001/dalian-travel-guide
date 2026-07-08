@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>大连7.14-7.18 休闲游攻略（完整版）</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: #f0f4f8; }
+        .hero-gradient { background: linear-gradient(135deg, #0b3b5c 0%, #1a6b8a 40%, #2d9bbf 70%, #6ec3d9 100%); }
+        .card { background: white; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden; }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #2d9bbf; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .floating-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .flight-card { border-left: 4px solid; }
+        .member-card { border-left: 4px solid #2d9bbf; }
+        .food-card { border-left: 4px solid #f59e0b; }
+        .day-header-bg-1 { background: linear-gradient(135deg, #0891b2, #06b6d4); }
+        .day-header-bg-2 { background: linear-gradient(135deg, #0284c7, #38bdf8); }
+        .day-header-bg-3 { background: linear-gradient(135deg, #57534e, #78716c); }
+        .day-header-bg-4 { background: linear-gradient(135deg, #059669, #34d399); }
+        .day-header-bg-5 { background: linear-gradient(135deg, #6b7280, #9ca3af); }
+        @media print { .floating-nav, .back-to-top { display: none; } }
+    </style>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<nav class="floating-nav fixed top-0 left-0 right-0 z-50 bg-white/80 border-b border-gray-200">
+    <div class="max-w-2xl mx-auto px-4 h-12 flex items-center justify-between text-sm">
+        <span class="font-bold text-gray-800">🏖 大连攻略</span>
+        <div class="flex gap-4 text-gray-500">
+            <a href="#flight" class="nav-link">出行</a>
+            <a href="#team" class="nav-link">团队</a>
+            <a href="#days" class="nav-link">行程</a>
+            <a href="#food" class="nav-link">美食</a>
+            <a href="#hotel" class="nav-link">住宿</a>
+            <a href="#budget" class="nav-link">预算</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== 主容器 ===== -->
+<div class="max-w-2xl mx-auto px-4 pt-16 pb-20">
+
+    <!-- ===== HERO ===== -->
+    <div class="hero-gradient rounded-2xl p-6 md:p-8 text-white mb-6 shadow-lg">
+        <div class="flex items-center gap-2 mb-1 flex-wrap">
+            <span class="tag bg-white/20 text-white text-xs">7.14 周一 → 7.18 周五</span>
+            <span class="tag bg-white/20 text-white text-xs">5天4晚</span>
+            <span class="tag bg-white/20 text-white text-xs">休闲游</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-black mt-3 leading-tight">大连<br>7.14 — 7.18 全攻略</h1>
+        <p class="text-white/80 text-sm mt-2">南京→大连✈ 东航 各家买各家的票 · 主打休闲游 · 吃好喝好打牌好</p>
+        <div class="flex gap-4 mt-4 text-xs text-white/70">
+            <span>🌡 24~30°C</span>
+            <span>☔ 偶有阵雨</span>
+            <span>👥 10人+大家庭</span>
+        </div>
+    </div>
+
+    <!-- ===== 快速导航卡片 ===== -->
+    <div class="grid grid-cols-2 gap-3 mb-6">
+        <a href="#flight" class="card p-4 text-center hover:shadow-md transition">
+            <div class="text-2xl mb-1">✈</div>
+            <div class="font-bold text-sm text-gray-800">出行信息</div>
+            <div class="text-xs text-gray-400">航班·时间·票價</div>
+        </a>
+        <a href="#team" class="card p-4 text-center hover:shadow-md transition">
+            <div class="text-2xl mb-1">👥</div>
+            <div class="font-bold text-sm text-gray-800">团队成员</div>
+            <div class="text-xs text-gray-400">10人分工一览</div>
+        </a>
+        <a href="#days" class="card p-4 text-center hover:shadow-md transition">
+            <div class="text-2xl mb-1">🗓</div>
+            <div class="font-bold text-sm text-gray-800">每日行程</div>
+            <div class="text-xs text-gray-400">5天详细安排</div>
+        </a>
+        <a href="#food" class="card p-4 text-center hover:shadow-md transition">
+            <div class="text-2xl mb-1">🍜</div>
+            <div class="font-bold text-sm text-gray-800">美食清单</div>
+            <div class="text-xs text-gray-400">马千金全搞定</div>
+        </a>
+        <a href="#hotel" class="card p-4 text-center hover:shadow-md transition">
+            <div class="text-2xl mb-1">🏠</div>
+            <div class="font-bold text-sm text-gray-800">住宿方案</div>
+            <div class="text-xs text-gray-400">星海湾亚朵</div>
+        </a>
+        <a href="#budget" class="card p-4 text-center hover:shadow-md transition">
+            <div class="text-2xl mb-1">💰</div>
+            <div class="font-bold text-sm text-gray-800">预算</div>
+            <div class="text-xs text-gray-400">每家先掏1万</div>
+        </a>
+    </div>
+
+    <!-- ===== 出行信息 ===== -->
+    <h2 id="flight" class="text-xl font-black text-gray-800 mb-4 mt-2">✈ 出行信息</h2>
+
+    <div class="space-y-3 mb-5">
+        <!-- 去程 -->
+        <div class="card overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-600 to-cyan-500 px-5 py-3 text-white">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">7月14日 周一</span>
+                        <h3 class="font-bold text-lg mt-1">南京 → 大连 去程</h3>
+                    </div>
+                    <span class="text-3xl opacity-60">🛫</span>
+                </div>
+            </div>
+            <div class="p-5 space-y-3">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-blue-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">航司</span>
+                        <div class="font-bold text-blue-700">✈ 东方航空</div>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">出发</span>
+                        <div class="font-bold text-blue-700">南京禄口机场</div>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">到达</span>
+                        <div class="font-bold text-blue-700">大连周水子机场</div>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">降落时间</span>
+                        <div class="font-bold text-blue-700">约16:00-17:00</div>
+                    </div>
+                </div>
+                <div class="bg-amber-50 rounded-xl p-3 text-sm text-amber-800">
+                    💡 <strong>票价参考：</strong>大人约1500元，小孩约1100元。各家买各家的票。
+                </div>
+                <div class="bg-amber-50 rounded-xl p-3 text-sm text-amber-800">
+                    💡 <strong>值机：</strong>东航小程序值机选座。彭铭说想坐一起飞机上干瞪眼。
+                </div>
+            </div>
+        </div>
+
+        <!-- 返程 -->
+        <div class="card overflow-hidden">
+            <div class="bg-gradient-to-r from-gray-600 to-gray-500 px-5 py-3 text-white">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">7月18日 周五</span>
+                        <h3 class="font-bold text-lg mt-1">大连 → 南京 返程</h3>
+                    </div>
+                    <span class="text-3xl opacity-60">🛬</span>
+                </div>
+            </div>
+            <div class="p-5 space-y-3">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-gray-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">航司</span>
+                        <div class="font-bold text-gray-700">✈ 东方航空</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">出发</span>
+                        <div class="font-bold text-gray-700">大连周水子机场</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">到达</span>
+                        <div class="font-bold text-gray-700">南京禄口机场</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-3 text-center">
+                        <span class="text-xs text-gray-500">起飞时间</span>
+                        <div class="font-bold text-gray-700">约15:00 / 15:05</div>
+                    </div>
+                </div>
+                <div class="bg-amber-50 rounded-xl p-3 text-sm text-amber-800">
+                    💡 <strong>说明：</strong>王昕怡说"15点的飞机上午下班了也来的及的"。无脑跟说"吃了中饭酒店休息会儿走不是正好"。酒店可存行李，14:00退房。
+                </div>
+                <div class="bg-amber-50 rounded-xl p-3 text-sm text-amber-800">
+                    💡 <strong>返程改期：</strong>原计划19号回，因无脑跟儿子19号要上课，改为18号回。"18号回来正好我儿子19号又开始上课了，这样19号我就不用帮他请假了"。
+                </div>
+            </div>
+        </div>
+
+        <!-- 大连交通 -->
+        <div class="card overflow-hidden">
+            <div class="bg-gradient-to-r from-green-600 to-green-500 px-5 py-3 text-white">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">🚕 大连市内交通</h3>
+                    </div>
+                    <span class="text-3xl opacity-60">🚗</span>
+                </div>
+            </div>
+            <div class="p-5 space-y-2 text-sm">
+                <div class="flex gap-2 items-start">
+                    <span class="text-green-600 shrink-0">🛫→🏨</span>
+                    <span>机场打车到酒店约40分钟</span>
+                </div>
+                <div class="flex gap-2 items-start">
+                    <span class="text-green-600 shrink-0">🏨→🍽</span>
+                    <span>酒店打车到品海楼约30分钟</span>
+                </div>
+                <div class="flex gap-2 items-start">
+                    <span class="text-green-600 shrink-0">🚕 市内</span>
+                    <span>总归打的（出租车/网约车）</span>
+                </div>
+                <div class="flex gap-2 items-start">
+                    <span class="text-green-600 shrink-0">🚗 旅顺</span>
+                    <span>自驾去旅顺约1小时（旅顺南路海景很美）</span>
+                </div>
+                <div class="flex gap-2 items-start">
+                    <span class="text-green-600 shrink-0">🌊 滨海路</span>
+                    <span>大连最美沿海公路，建议自驾</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 天气 ===== -->
+    <div class="card p-5 mb-5">
+        <h2 class="font-bold text-lg text-gray-800 mb-3">🌤 天气概览</h2>
+        <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="bg-blue-50 rounded-xl p-3">
+                <span class="text-gray-500">气温</span>
+                <div class="font-bold text-lg text-blue-700">24~30°C</div>
+            </div>
+            <div class="bg-green-50 rounded-xl p-3">
+                <span class="text-gray-500">体感</span>
+                <div class="font-bold text-lg text-green-700">海风凉爽</div>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-3">
+                <span class="text-gray-500">降水</span>
+                <div class="font-bold text-lg text-yellow-700">偶有阵雨</div>
+            </div>
+            <div class="bg-purple-50 rounded-xl p-3">
+                <span class="text-gray-500">穿衣</span>
+                <div class="font-bold text-lg text-purple-700">短袖+薄外套</div>
+            </div>
+        </div>
+        <p class="text-xs text-gray-400 mt-3">⚠ 匡哥问过"台风来了飞机有得飞否"——出发前关注台风路径，7月汛期带伞</p>
+    </div>
+
+    <!-- ===== 团队成员 ===== -->
+    <h2 id="team" class="text-xl font-black text-gray-800 mb-4 mt-2">👥 团队成员</h2>
+    <div class="grid grid-cols-2 gap-3 mb-5">
+        <div class="card p-4">
+            <div class="text-xl mb-1">👑</div>
+            <div class="font-bold text-sm">王昕怡</div>
+            <div class="text-xs text-gray-500">总策划 · 会计</div>
+            <div class="text-xs text-gray-400 mt-1">定方向管预算催进度</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">💪</div>
+            <div class="font-bold text-sm">彭铭（彭M）</div>
+            <div class="text-xs text-gray-500">预算 · 执行</div>
+            <div class="text-xs text-gray-400 mt-1">控成本把关时间线</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">🍜</div>
+            <div class="font-bold text-sm">马悠韵（马千金）</div>
+            <div class="text-xs text-gray-500">美食总监</div>
+            <div class="text-xs text-gray-400 mt-1">一个人搞定全部餐厅预订</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">📸</div>
+            <div class="font-bold text-sm">无脑跟（东北佬）</div>
+            <div class="text-xs text-gray-500">情报员 · 酒友</div>
+            <div class="text-xs text-gray-400 mt-1">去年去过大连，知自酿啤酒</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">👀</div>
+            <div class="font-bold text-sm">无脑眼</div>
+            <div class="text-xs text-gray-500">跟班</div>
+            <div class="text-xs text-gray-400 mt-1">无脑跟一起行动</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">🚗</div>
+            <div class="font-bold text-sm">匡昊津（宝塔糖/宝姐）</div>
+            <div class="text-xs text-gray-500">后勤 · 酒友</div>
+            <div class="text-xs text-gray-400 mt-1">干瞪眼、喝酒、群里大腿</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">💼</div>
+            <div class="font-bold text-sm">蒋文杰（老蒋）</div>
+            <div class="text-xs text-gray-500">幕后操盘</div>
+            <div class="text-xs text-gray-400 mt-1">少说话多做事的人</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">🎮</div>
+            <div class="font-bold text-sm">任缘</div>
+            <div class="text-xs text-gray-500">牌友</div>
+            <div class="text-xs text-gray-400 mt-1">干瞪眼积极分子</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">👶</div>
+            <div class="font-bold text-sm">钱璐（099172）</div>
+            <div class="text-xs text-gray-500">牌友</div>
+            <div class="text-xs text-gray-400 mt-1">带娃打牌两不误</div>
+        </div>
+        <div class="card p-4">
+            <div class="text-xl mb-1">🃏</div>
+            <div class="font-bold text-sm">蒋治（大治）</div>
+            <div class="text-xs text-gray-500">牌友</div>
+            <div class="text-xs text-gray-400 mt-1">想挑战神的威严</div>
+        </div>
+    </div>
+
+    <!-- ===== 每日行程 ===== -->
+    <h2 id="days" class="text-xl font-black text-gray-800 mb-4 mt-2">🗓 每日行程</h2>
+
+    <!-- DAY 1 -->
+    <div class="card mb-4 overflow-hidden">
+        <div class="day-header-bg-1 px-5 py-3 text-white flex justify-between items-center">
+            <div>
+                <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">7月14日 周一</span>
+                <h3 class="font-bold text-lg mt-1">DAY 1 · 抵达·品海楼开吃</h3>
+            </div>
+            <span class="text-3xl opacity-60">🦐</span>
+        </div>
+        <div class="p-5 space-y-3">
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">✈</span><div><span class="font-bold text-sm">下午 南京→大连</span><p class="text-sm text-gray-600">各家买各家机票。东航，约16:00-17:00降落大连</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🚕</span><div><span class="font-bold text-sm">机场→酒店（约40min）</span><p class="text-sm text-gray-600">打车到亚朵酒店放行李</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🚕</span><div><span class="font-bold text-sm">酒店→品海楼（约30min）</span><p class="text-sm text-gray-600">打车到渔人码头</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🦐</span><div><span class="font-bold text-sm">19:00 晚餐：品海楼（渔人码头店）</span><p class="text-sm text-gray-600"><strong class="text-red-600">已预订！</strong> 马千金订的，海景餐厅，海肠捞饭安排上！</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🌃</span><div><span class="font-bold text-sm">饭后</span><p class="text-sm text-gray-600">渔人码头散步，回星海广场看夜景</p></div></div>
+            <div class="bg-amber-50 rounded-xl p-3 text-sm text-amber-800">
+                💡 彭铭说第一天大家肯定都饿了，"2800应该没问题"（含匡哥和娃哥的啤酒）。品海楼2800/桌/12人。
+            </div>
+        </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="card mb-4 overflow-hidden">
+        <div class="day-header-bg-2 px-5 py-3 text-white flex justify-between items-center">
+            <div>
+                <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">7月15日 周二</span>
+                <h3 class="font-bold text-lg mt-1">DAY 2 · 滨海路·金太阳烧烤</h3>
+            </div>
+            <span class="text-3xl opacity-60">🌊</span>
+        </div>
+        <div class="p-5 space-y-3">
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">😴</span><div><span class="font-bold text-sm">自然醒</span><p class="text-sm text-gray-600">马千金说"根本起不来"，早午饭一起吃了</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🍜</span><div><span class="font-bold text-sm">10:00取号 午餐：寅一生寿司专门店</span><p class="text-sm text-gray-600"><strong class="text-red-600">已预订！</strong> 日料一条街，日料面条。10点就要去取号（过号现场取号）</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🏖</span><div><span class="font-bold text-sm">上午-下午：棒棰岛/付家庄</span><p class="text-sm text-gray-600">踩水、赶海、银石滩散步。付家庄那边适合徒步</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🚗</span><div><span class="font-bold text-sm">下午：滨海路自驾</span><p class="text-sm text-gray-600">燕窝岭→北大桥→银石滩，中国最美沿海公路之一</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🦐</span><div><span class="font-bold text-sm">18:00 晚餐：金太阳海鲜烧烤（星海公园店）</span><p class="text-sm text-gray-600"><strong class="text-red-600">已预订！</strong> 12位，西南路64号。海鲜+烧烤+炒菜都有</p></div></div>
+        </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="card mb-4 overflow-hidden">
+        <div class="day-header-bg-3 px-5 py-3 text-white flex justify-between items-center">
+            <div>
+                <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">7月16日 周三</span>
+                <h3 class="font-bold text-lg mt-1">DAY 3 · 旅顺·正黄旗烧烤</h3>
+            </div>
+            <span class="text-3xl opacity-60">🏛</span>
+        </div>
+        <div class="p-5 space-y-3">
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🚗</span><div><span class="font-bold text-sm">08:30-09:30 自驾去旅顺</span><p class="text-sm text-gray-600">约1小时车程，走旅顺南路</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🏛</span><div><span class="font-bold text-sm">09:30-12:00 旅顺博物馆</span><p class="text-sm text-gray-600">免费！王昕怡说"有教育意义"，"去了会哭的"。无脑跟说"小孩也可以了解历史"</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🍜</span><div><span class="font-bold text-sm">11:00-13:00 午餐：寅一面屋（民主广场店）</span><p class="text-sm text-gray-600"><strong class="text-red-600">已预订！</strong> "吃面当中饭"，过13点再开</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">⛰</span><div><span class="font-bold text-sm">13:30-15:30 白玉山+军港公园</span><p class="text-sm text-gray-600">看军舰，了解中国近代海军史</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🚗</span><div><span class="font-bold text-sm">返回市区</span></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🦐</span><div><span class="font-bold text-sm">18:00 晚餐：正黄旗海鲜烧烤（东港店）</span><p class="text-sm text-gray-600"><strong class="text-red-600">已预订！</strong> 666房间，12位，港湾广场3号。电话0411-82029999</p></div></div>
+        </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="card mb-4 overflow-hidden">
+        <div class="day-header-bg-4 px-5 py-3 text-white flex justify-between items-center">
+            <div>
+                <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">7月17日 周四</span>
+                <h3 class="font-bold text-lg mt-1">DAY 4 · 自由·逛吃·干瞪眼</h3>
+            </div>
+            <span class="text-3xl opacity-60">🃏</span>
+        </div>
+        <div class="p-5 space-y-3">
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">😴</span><div><span class="font-bold text-sm">自然醒</span></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🥟</span><div><span class="font-bold text-sm">午餐：王慧洁水饺</span><p class="text-sm text-gray-600">本地人都吃的店，好评很高。备选：喜鼎海胆水饺</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🎨</span><div><span class="font-bold text-sm">下午自由安排</span><p class="text-sm text-gray-600">大连自然博物馆（黑石礁）/ 东港东方水城 / 西安路商圈逛街</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🍒</span><div><span class="font-bold text-sm">买特产</span><p class="text-sm text-gray-600">7月大连樱桃正当季！海鲜干货、樱桃带回去</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🍳</span><div><span class="font-bold text-sm">晚餐：悦来香地道大连菜 或 君霖中山店</span><p class="text-sm text-gray-600">自由发挥，没有预约，看情况决定</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🃏</span><div><span class="font-bold text-sm">晚上：干瞪眼</span><p class="text-sm text-gray-600">你们的核心项目！最后一晚了，多赢点😄</p></div></div>
+        </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="card mb-4 overflow-hidden">
+        <div class="day-header-bg-5 px-5 py-3 text-white flex justify-between items-center">
+            <div>
+                <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">7月18日 周五</span>
+                <h3 class="font-bold text-lg mt-1">DAY 5 · 返程</h3>
+            </div>
+            <span class="text-3xl opacity-60">✈</span>
+        </div>
+        <div class="p-5 space-y-3">
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">😴</span><div><span class="font-bold text-sm">自然醒</span></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🥟</span><div><span class="font-bold text-sm">10:00-11:00 早午饭</span><p class="text-sm text-gray-600">王慧洁开口水饺或喜鼎海胆水饺</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🛍</span><div><span class="font-bold text-sm">11:00-12:00 最后采购</span><p class="text-sm text-gray-600">买樱桃、海鲜干货当伴手礼</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">🏨</span><div><span class="font-bold text-sm">退房（可存行李）</span><p class="text-sm text-gray-600">酒店可以存行李，下午再去机场取</p></div></div>
+            <div class="flex gap-3 items-start"><span class="text-lg shrink-0">✈</span><div><span class="font-bold text-sm">15:00 大连→南京</span><p class="text-sm text-gray-600">东航返程。王昕怡说"15点的飞机上午下班了也来的及的"</p></div></div>
+        </div>
+    </div>
+
+    <!-- ===== 美食清单 ===== -->
+    <h2 id="food" class="text-xl font-black text-gray-800 mb-4 mt-6">🍜 美食清单（马千金版）</h2>
+    <div class="card p-5 mb-5">
+        <p class="text-sm text-gray-500 mb-4">马悠韵一个人翻遍全网做的功课，全部已预订👇</p>
+        <div class="space-y-3">
+            <div class="flex justify-between items-center p-3 bg-red-50 rounded-xl">
+                <div><span class="font-bold text-sm">🦐 品海楼（渔人码头店）</span><p class="text-xs text-gray-500">7.14 晚餐 · 海景餐厅</p></div>
+                <span class="text-xs font-bold text-red-600">已订19:00</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-orange-50 rounded-xl">
+                <div><span class="font-bold text-sm">🍜 寅一生寿司专门店（中山/东港店）</span><p class="text-xs text-gray-500">7.15 午餐 · 日料面条</p></div>
+                <span class="text-xs font-bold text-orange-600">10点取号</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-yellow-50 rounded-xl">
+                <div><span class="font-bold text-sm">🦐 金太阳海鲜烧烤（星海公园店）</span><p class="text-xs text-gray-500">7.15 晚餐 · 12位</p></div>
+                <span class="text-xs font-bold text-yellow-600">已订18:00</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-lime-50 rounded-xl">
+                <div><span class="font-bold text-sm">🍜 寅一面屋（民主广场店）</span><p class="text-xs text-gray-500">7.16 午餐 · 吃面</p></div>
+                <span class="text-xs font-bold text-lime-600">已订11:00-11:30</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-green-50 rounded-xl">
+                <div><span class="font-bold text-sm">🦐 正黄旗海鲜烧烤（东港店）</span><p class="text-xs text-gray-500">7.16 晚餐 · 666房间·12位</p></div>
+                <span class="text-xs font-bold text-green-600">已订18:00</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-blue-50 rounded-xl">
+                <div><span class="font-bold text-sm">🥟 王慧洁水饺</span><p class="text-xs text-gray-500">7.17 午餐 · 本地人都吃</p></div>
+                <span class="text-xs font-bold text-blue-600">未预约</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-purple-50 rounded-xl">
+                <div><span class="font-bold text-sm">🍳 悦来香/君霖中山店</span><p class="text-xs text-gray-500">7.17 晚餐 · 自由发挥</p></div>
+                <span class="text-xs font-bold text-purple-600">自由</span>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-red-50 rounded-xl text-sm">
+            <span class="font-bold">⚠ 注意：</span>马千金退掉了日月升（"查了一下评价不高"）。另外讨论过<strong>无限虾享</strong>（让黄牛排队）、<strong>喜鼎海胆水饺</strong>（备选）。
+        </div>
+        <div class="mt-2 p-3 bg-amber-50 rounded-xl text-sm">
+            <span class="font-bold">🍺 精酿啤酒：</span>无脑跟提过"自酿啤酒好牌子"，大连有<strong>气泡实验室（星海店）</strong>和<strong>怂·精酿啤酒馆</strong>。
+        </div>
+        <div class="mt-2 p-3 bg-green-50 rounded-xl text-sm">
+            <span class="font-bold">🍚 海肠捞饭：</span>匡哥的执念——"海肠捞饭必须有"。基本每家海鲜店都有。
+        </div>
+    </div>
+
+    <!-- ===== 住宿 ===== -->
+    <h2 id="hotel" class="text-xl font-black text-gray-800 mb-4 mt-6">🏠 住宿</h2>
+    <div class="card p-5 mb-5">
+        <div class="flex justify-between items-start mb-3">
+            <div>
+                <h3 class="font-bold text-lg">大连高新万达星海湾大桥海景亚朵酒店</h3>
+                <p class="text-sm text-gray-500">星海广场附近 · 推门见海</p>
+            </div>
+            <span class="tag bg-blue-100 text-blue-700">已订</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-sm mb-3">
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">房型</span>
+                <div class="font-bold">尊享海景双床房</div>
+            </div>
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">数量</span>
+                <div class="font-bold">3间</div>
+            </div>
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">单价</span>
+                <div class="font-bold">约797元/间/晚</div>
+            </div>
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">4晚合计</span>
+                <div class="font-bold">约9568元</div>
+            </div>
+        </div>
+        <div class="bg-green-50 rounded-xl p-3 text-sm">
+            💡 <strong>特别说明：</strong>讨论过希尔顿金石滩（1588两晚但加价到2788），最终选了亚朵。马千金说"连锁酒店的早饭不都差不多"——没买酒店早餐套餐。<br><br>
+            彭铭说酒店在星海广场，打车去各饭店约30分钟。酒店可免费取消（7月14日前）。
+        </div>
+    </div>
+
+    <!-- ===== 预算 ===== -->
+    <h2 id="budget" class="text-xl font-black text-gray-800 mb-4 mt-6">💰 预算</h2>
+    <div class="card p-5 mb-5">
+        <div class="grid grid-cols-2 gap-2 text-sm mb-3">
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">住宿</span>
+                <div class="font-bold">约797元/间/晚</div>
+            </div>
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">机票（大人）</span>
+                <div class="font-bold">约1500元</div>
+            </div>
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">机票（小孩）</span>
+                <div class="font-bold">约1100元</div>
+            </div>
+            <div class="bg-gray-50 p-2 rounded-lg text-center">
+                <span class="text-gray-500 text-xs">品海楼晚餐</span>
+                <div class="font-bold">约2800元/桌/12人</div>
+            </div>
+        </div>
+        <div class="text-center p-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl">
+            <span class="text-gray-500 text-sm">王昕怡说：</span>
+            <div class="text-base font-bold text-blue-700">"每家先拿1万，我当会计"</div>
+            <p class="text-xs text-gray-500 mt-1">她算了算"估计一家不要一万"</p>
+        </div>
+    </div>
+
+    <!-- ===== 景点一览 ===== -->
+    <h2 class="text-xl font-black text-gray-800 mb-4 mt-6">🏖 景点一览</h2>
+    <div class="card p-5 mb-5">
+        <div class="space-y-3">
+            <div class="flex gap-3 items-start p-3 bg-red-50 rounded-xl">
+                <span class="text-xl">🏛</span>
+                <div><span class="font-bold text-sm text-red-700">旅顺</span><p class="text-xs text-gray-600">博物馆+白玉山+军港。"怕去了要去杀日本人"😂 有教育意义</p></div>
+            </div>
+            <div class="flex gap-3 items-start p-3 bg-blue-50 rounded-xl">
+                <span class="text-xl">🏖</span>
+                <div><span class="font-bold text-sm text-blue-700">付家庄/银石滩</span><p class="text-xs text-gray-600">海滨浴场，可以赶海。银石滩小石子多</p></div>
+            </div>
+            <div class="flex gap-3 items-start p-3 bg-green-50 rounded-xl">
+                <span class="text-xl">🌲</span>
+                <div><span class="font-bold text-sm text-green-700">棒棰岛</span><p class="text-xs text-gray-600">无脑跟小红书找的攻略，说不错</p></div>
+            </div>
+            <div class="flex gap-3 items-start p-3 bg-cyan-50 rounded-xl">
+                <span class="text-xl">🌉</span>
+                <div><span class="font-bold text-sm text-cyan-700">星海广场</span><p class="text-xs text-gray-600">住处附近，跨海大桥夜景</p></div>
+            </div>
+            <div class="flex gap-3 items-start p-3 bg-yellow-50 rounded-xl">
+                <span class="text-xl">🚗</span>
+                <div><span class="font-bold text-sm text-yellow-700">滨海路自驾</span><p class="text-xs text-gray-600">中国最美沿海公路！燕窝岭→北大桥</p></div>
+            </div>
+            <div class="flex gap-3 items-start p-3 bg-gray-50 rounded-xl">
+                <span class="text-xl">❌</span>
+                <div><span class="font-bold text-sm text-gray-700">金石滩</span><p class="text-xs text-gray-600">讨论过但离星海广场远，没列入行程</p></div>
+            </div>
+        </div>
+        <p class="text-xs text-gray-400 mt-3">🎯 风格：前一天定后一天去哪逛逛，主打一个休闲游</p>
+    </div>
+
+    <!-- ===== 群聊语录 ===== -->
+    <h2 class="text-xl font-black text-gray-800 mb-4 mt-6">💬 群聊金句</h2>
+    <div class="card p-5 mb-5">
+        <div class="space-y-2 text-sm">
+            <div class="p-2 border-l-4 border-blue-400 bg-blue-50 rounded-r-lg">
+                <span class="font-bold">马悠韵：</span>"全都安排的妥妥的，我个人很满意"
+            </div>
+            <div class="p-2 border-l-4 border-green-400 bg-green-50 rounded-r-lg">
+                <span class="font-bold">彭铭：</span>"五天胖十斤"
+            </div>
+            <div class="p-2 border-l-4 border-purple-400 bg-purple-50 rounded-r-lg">
+                <span class="font-bold">无脑跟：</span>"主打一个休闲游"
+            </div>
+            <div class="p-2 border-l-4 border-red-400 bg-red-50 rounded-r-lg">
+                <span class="font-bold">王昕怡：</span>"我们主打休闲游，赌博游"
+            </div>
+            <div class="p-2 border-l-4 border-amber-400 bg-amber-50 rounded-r-lg">
+                <span class="font-bold">匡昊津：</span>（看到机票）"台风来了，飞机有得飞否"
+            </div>
+            <div class="p-2 border-l-4 border-indigo-400 bg-indigo-50 rounded-r-lg">
+                <span class="font-bold">王昕怡：</span>"旅顺去了我会哭的"
+            </div>
+            <div class="p-2 border-l-4 border-pink-400 bg-pink-50 rounded-r-lg">
+                <span class="font-bold">匡昊津：</span>"海肠捞饭必须有"
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 页脚 ===== -->
+    <div class="text-center text-gray-400 text-xs mt-8 pb-4 border-t border-gray-200 pt-6">
+        <p>🏖 祝大连之行吃好喝好玩好！有问题群里嗷一声</p>
+        <p class="mt-1">马千金说：全都安排的妥妥的</p>
+    </div>
+
+</div>
+
+<!-- 返回顶部按钮 -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" 
+    class="back-to-top fixed bottom-6 right-6 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-lg hover:shadow-xl transition z-50">
+    ⬆
+</button>
+
+</body>
+</html>
